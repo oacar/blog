@@ -1,6 +1,3 @@
 [submodule "themes/AllinOne"]
 	path = themes/AllinOne
 	url = https://github.com/orianna-zzo/AllinOne.git
-[submodule "themes/hugo-sustain"]
-	path = themes/hugo-sustain
-	url = https://github.com/nurlansu/hugo-sustain.git
