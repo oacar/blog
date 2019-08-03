@@ -1,16 +1,17 @@
-baseURL                   = "https://www.acaromer.com"
+baseURL                   = "https://example.com"
 builddrafts                = false
-languageCode               = "en"
+languageCode               = "zn-Hans"
 canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
 publishdir                 = "public"
 enableEmoji                = true
+hasCJKLanguage             = true
 summaryLength              = 200
 Paginate                   = 3
 
 theme                      = "AllinOne"
-title                      = ""
+title                      = "Orianna"
 
 pygmentsuseclasses         = true
 
@@ -33,19 +34,26 @@ pygmentsuseclasses         = true
     url                    = "blog/"  
 
   [[menu.main]]
-    name                   = "Resume"
+    name                   = "Moment"
+    weight                 = -110
+    identifier             = "moment"
+    url                    = "moment/" 
+
+  [[menu.main]]
+    name                   = "About"
     weight                 = -100
-    identifier             = "resumei"
-    url                    = "resume.pdf"  
+    identifier             = "about"
+    url                    = "about/"  
 
  
 
 [params]
-  avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
-  author                   = "Omer Acar"
-  description              = ["CompBio Phd Student", "Love all computer science and evolution"]           # appears in the site header when set to a non-empty string
+  faviconfile              = "img/zheng.png"               # from static/
+  avatar                   = "img/profile.jpg"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Orianna"
+  description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
   welcome_head             = "Hello, World!"
-  welcome_word             = "~ One Thing At A Time ~"
+  welcome_word             = "~ No Day But Today ~"
 
   latestpostscount         = 5                             # how many posts to display on the home page
   bloggroupby              = 'month'
@@ -64,10 +72,15 @@ pygmentsuseclasses         = true
   katex                    = true
 
   # links
-  email                    = "oma21@pitt.edu"
-  github                   = "//github.com/oacar"
-  linkedin                 = "//linkedin.com/in/omer-acar-98b00187"
-  twitter                  = "//twitter.com/omeracar27" 
+  email                    = "you@email.com"
+  github                   = "//github.com/you"
+  linkedin                 = "//linkedin.com/in/you"
+  facebook                 = "//facebook.com/you"
+  googleplus               = "//google.com/you"
+  twitter                  = "//twitter.com/you" 
+  px500                    = "//px500"
+  instagram                = "//instagram.com/you"
+  include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
   
   # analytics
   googleAnalytics          = "your-google-analytic-id"
