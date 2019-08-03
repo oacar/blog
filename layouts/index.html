@@ -1,19 +1,60 @@
-{{ partial "head" . }}
-  <body>
-    <div id="wrap">
-      {{ partial "header" . }}
-      <section id="about">
-        <div class="container">
-        <div class="avatar">
-          <img class="img-circle" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
-        </div>
-        <h3>I love all things computer science, biology and evolution..</h3>
-        <h3>For more check out my academic &amp; professional <a href="{{ .Site.BaseURL }}resume/">Resume</a>.</h3>
-        <h3>Contact me at <a href="http://twitter.com/{{ .Site.Params.Social.Twitter }}">@{{ .Site.Params.Social.Twitter }}</a> or by <a href="mailto:{{ .Site.Params.Social.Email }}">email</a>.</h3>
-        {{ partial "social.html" . }}
-        </div>
-      </section>
+{{ define "header" }} 
+   {{ partial "site-navbar.html" . }} 
+   {{ partial "homepage-header.html" . }}  
+
+  <!-- Welcome Word -->
+  {{ with $.Site.Params.welcome_head }}
+    <section class="container pt-5 text-center">
+      <h1 class="display-3">{{ $.Site.Params.welcome_head }}</h1>
+      {{ with $.Site.Params.welcome_word }}
+      <p style="font-size:1.8rem; color: var(--text-light);">{{ $.Site.Params.welcome_word }}</p>
+      {{ end }}
+    </section>
+  {{ end }}
+  <!-- /.Welcome Word -->
+
+{{ end }} 
+
+
+{{ define "main" }}
+  <!-- Main layout -->
+  <main class="post-main-wrapper px-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <!-- <hr> -->
+        
+        {{ partial "sidebar-categories.html" . }}
+        
+        {{ partial "sidebar-tags.html" . }}
+
+        {{ partial "sidebar-series.html" . }}
+
+      </div>
+      <!-- /.Sidebar -->
+
+      <!-- Post list -->
+      <!-- <div class="pt-5 px-5 mx-5"> -->
+      <div class="col-md-9 mt-3">  
+        {{ $totalpostscount := len (.Data.Pages) }}
+        {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
+        {{ if gt $latestpostscount 0 }}
+          <!-- <div class='post-heading'>
+            {{ i18n "latestPosts" }}
+          </div> -->
+          <div>
+              {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
+                  {{ partial "post-card.html" . }}
+              {{ end }}
+              
+          </div>
+        {{ end }}
+
+      </div>
+      <!-- /.Post list -->
+
     </div>
-    {{ partial "footer" . }}
-  </body>
-</html>
+  </main>
+  <!--Main layout-->
+
+{{ end }}

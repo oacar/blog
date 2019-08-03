@@ -1,38 +1,75 @@
-baseurl ="https://www.acaromer.com/"
-languageCode = "en-US"
-title = "Omer Acar"
-# Enable comments by entering your Disqus shortname
-disqusShortname = ""
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-theme = "hugo-sustain"
+baseURL                   = "https://www.acaromer.com"
+builddrafts                = false
+languageCode               = "en"
+canonifyurls               = true
+contentdir                 = "content"
+layoutdir                  = "layouts"
+publishdir                 = "public"
+enableEmoji                = true
+summaryLength              = 200
+Paginate                   = 3
+
+theme                      = "AllinOne"
+title                      = ""
+
+pygmentsuseclasses         = true
+
 
 [permalinks]
-  post = "/:year/:month/:day/:slug"
+  blog                     = "blog/:year-:month/:slug/"
+
+
+[taxonomies]
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
+
+
+[menu]
+  [[menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "blog/"  
+
+  [[menu.main]]
+    name                   = "Resume"
+    weight                 = -100
+    identifier             = "resumei"
+    url                    = "resume.pdf"  
+
+ 
 
 [params]
-  avatar = "profile.png"
-  author = "Omer Acar"
-  description = "Describe your website"
+  avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Omer Acar"
+  description              = ["CompBio Phd Student", "Love all computer science and evolution"]           # appears in the site header when set to a non-empty string
+  welcome_head             = "Hello, World!"
+  welcome_word             = "~ One Thing At A Time ~"
 
-  # Custom assets can be linked with their paths relative to static/
-  custom_css = []
-  custom_js  = []
+  latestpostscount         = 5                             # how many posts to display on the home page
+  bloggroupby              = 'month'
+  dateform                 = "Jan 2, 2006"
+  dateformfull             = "2006-01-02  Monday  15:04:05"
+  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
 
-[params.social]
-  Github        = "oacar"
-  Email         = "oma21@pitt.edu"
-  Twitter       = "omeracar27"
-  LinkedIn      = "omer-acar-98b00187"
+  # slides
+  slidesDirPath            = "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
 
-## Main Menu
-[[menu.main]]
-  name = "blog"
-  weight = 100
-  identifier = "blog"
-  url = "/blog/"
-[[menu.main]]
-  name = "resume"
-  identifier = "resume"
-  weight = 300
-  url = "/resume/"
+  # highlighting 
+  highlightjs              = true
+
+  # latex
+  katex                    = true
+
+  # links
+  email                    = "oma21@pitt.edu"
+  github                   = "//github.com/oacar"
+  linkedin                 = "//linkedin.com/in/omer-acar-98b00187"
+  twitter                  = "//twitter.com/omeracar27" 
+  
+  # analytics
+  googleAnalytics          = "your-google-analytic-id"
+    
+    
