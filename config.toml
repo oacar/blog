@@ -9,7 +9,7 @@ enableEmoji                = true
 summaryLength              = 200
 Paginate                   = 3
 
-theme                      = "AllinOne"
+theme                      = ""
 title                      = ""
 
 pygmentsuseclasses         = true
@@ -70,6 +70,6 @@ pygmentsuseclasses         = true
   twitter                  = "//twitter.com/omeracar27" 
   
   # analytics
-  googleAnalytics          = "your-google-analytic-id"
+  googleAnalytics          = "UA-145122708-1"
     
     
